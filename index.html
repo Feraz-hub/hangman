@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Your CSS file -->
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            background-color: #222; /* Dark background for contrast */
+            color: white; /* White text color */
+        }
+
+        #buttons-container {
+            display: flex; /* Display buttons in a row */
+            gap: 10px; /* Space between buttons */
+        }
+
+        #question-mark {
+            font-size: 50px; /* Size of the question mark */
+            color: #00f; /* Neon blue color */
+            text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f; /* Glowing effect */
+            transition: transform 0.3s; /* Smooth scale effect on hover */
+            margin-top: 20px; /* Space between question mark and buttons */
+        }
+
+        #question-mark:hover {
+            transform: scale(1.1); /* Scale up on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Hangman Game</h1>
+    <div id="status"></div>
+    <div id="word-container"></div>
+    <div id="wrong-letters-container"></div>
+    <input type="text" id="letter-input" maxlength="1" placeholder="Guess a letter" style="margin-bottom: 10px;"/>
+    
+    <div id="buttons-container">
+        <button id="guess-button">Guess</button>
+        <button id="reset-button">Reset</button>
+    </div>
+
+    <div id="question-mark">❓</div> <!-- Glowing question mark -->
+    <script src="script.js"></script> <!-- Your JavaScript file -->
+</body>
+</html>
